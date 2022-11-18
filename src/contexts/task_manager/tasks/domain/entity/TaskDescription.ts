@@ -1,4 +1,4 @@
-import { InvalidArgumentError, StringValueObject } from "../../../shared";
+import { InvalidArgumentError, StringValueObject } from "../../../../shared";
 
 export class TaskDescription extends StringValueObject {
     private readonly MAX_LENGTH: number = 500;

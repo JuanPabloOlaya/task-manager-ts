@@ -1,4 +1,4 @@
-import { AggregateRoot } from "../../../shared";
+import { AggregateRoot } from "../../../../shared";
 import { TaskId } from "./TaskId";
 import { TaskTitle } from "./TaskTitle";
 import { AttributeValue } from "@aws-sdk/client-dynamodb";
@@ -15,6 +15,18 @@ export class Task extends AggregateRoot {
         this.id = id;
         this.title = title;
         this.description = description;
+    }
+
+    public static create({
+        id,
+        title,
+        description
+    }: {
+        id: TaskId,
+        title: TaskTitle,
+        description: TaskDescription
+    }): Task {
+        return new Task(id, title, description);
     }
 
     toDDBItem(): { [key: string]: AttributeValue } {

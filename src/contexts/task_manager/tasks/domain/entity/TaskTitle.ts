@@ -1,4 +1,4 @@
-import { InvalidArgumentError, StringValueObject } from "../../../shared";
+import { InvalidArgumentError, StringValueObject } from "../../../../shared";
 
 export class TaskTitle extends StringValueObject {
     constructor(value: string) {
